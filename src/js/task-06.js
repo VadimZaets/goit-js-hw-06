@@ -1,15 +1,15 @@
 const inputRef = document.querySelector("#validation-input");
 
-inputRef.addEventListener("blur", changeInputColor);
+inputRef.addEventListener("blur", makeChangeColorInput);
 
-function changeInputColor(event) {
-  const inputLngt = event.currentTarget.value.length;
-
-  if (inputLngt == inputRef.dataset.length) {
-    inputRef.classList.add("valid");
-    inputRef.classList.remove("invalid");
+function makeChangeColorInput(event) {
+  const inputLength = event.currentTarget.value.length;
+  const input = inputRef.classList;
+  if (inputRef.dataset.length == inputLength) {
+    input.add("valid");
+    input.remove("invalid");
   } else {
-    inputRef.classList.add("invalid");
-    inputRef.classList.remove("valid");
+    input.add("invalid");
+    input.remove("valid");
   }
 }
